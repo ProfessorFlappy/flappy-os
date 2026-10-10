@@ -24,6 +24,7 @@ modules:
     install:
       packages:
         - helium-bin
+        - lm_sensors
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -57,10 +58,6 @@ modules:
     install:
       - AppIndicator and KStatusNotifierItem Support
     uninstall:
-      - Apps Menu
       - Background Logo
-      - Launch New Instance
-      - Places Status Indicator
-      - Window List
   
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
