@@ -31,6 +31,8 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - gnome-software
+        - nvtop
+        - htop
 
   - type: default-flatpaks
     configurations:
@@ -40,7 +42,7 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - io.missioncenter.MissionCenter
           - io.github.kolunmi.Bazaar
-          - org.pvermeer.WebAppHub
+          - net.codelogistics.webapps
           - com.github.flxzt.rnote
           - com.discordapp.Discord
 
