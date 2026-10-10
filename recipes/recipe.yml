@@ -20,7 +20,7 @@ modules:
   - type: dnf
     repos:
       files:
-        - /files/dnf/netbird.repo
+        - /etc/yum.repos.d/netbird.repo
       copr:
         - imput/helium
     install:
