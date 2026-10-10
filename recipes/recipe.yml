@@ -54,13 +54,13 @@ modules:
           - com.discordapp.Discord
           
   - type: gnome-extensions
-        install:
-          - AppIndicator and KStatusNotifierItem Support
-        uninstall:
-          - Apps Menu
-          - Background Logo
-          - Launch New Instance
-          - Places Status Indicator
-          - Window List
+    install:
+      - AppIndicator and KStatusNotifierItem Support
+    uninstall:
+      - Apps Menu
+      - Background Logo
+      - Launch New Instance
+      - Places Status Indicator
+      - Window List
   
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
