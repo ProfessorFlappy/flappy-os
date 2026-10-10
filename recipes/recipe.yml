@@ -24,7 +24,7 @@ modules:
     install:
       packages:
         - helium-bin
-        - syncthing
+        - syncthing # Remember to enable the service
         - lm_sensors
         - fish
     remove:
@@ -45,7 +45,7 @@ modules:
     repos:
       - netbird.repo
     install:
-      - netbird # Run 'sudo netbird service install' then enable the service
+      - netbird # Remember to run 'sudo netbird service install' then enable the service
   
   - type: default-flatpaks
     configurations:
