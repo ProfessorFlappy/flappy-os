@@ -20,11 +20,10 @@ modules:
   - type: dnf
     repos:
       copr:
-        - atim/starship
+        - imput/helium
     install:
       packages:
-        - micro
-        - starship
+        - helium-bin
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -38,8 +37,9 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
+          - io.missioncenter.MissionCenter
+          - org.pvermeer.WebAppHub
+          - com.github.flxzt.rnote
+          - com.discordapp.Discord
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
