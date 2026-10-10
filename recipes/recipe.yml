@@ -26,7 +26,6 @@ modules:
     install:
       packages:
         - helium-bin
-        - netbird
         - lm_sensors
     remove:
       packages:
@@ -41,6 +40,9 @@ modules:
         - malcontent-control
         - nvtop
         - htop
+  - type: shell
+    commands:
+      - dnf install -y --noscripts netbird
 
   - type: default-flatpaks
     configurations:
