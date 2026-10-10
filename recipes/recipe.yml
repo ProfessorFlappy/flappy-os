@@ -28,6 +28,7 @@ modules:
     install:
       packages:
         - helium-bin
+        - netbird
         - lm_sensors
     remove:
       packages:
