@@ -24,6 +24,7 @@ modules:
     install:
       packages:
         - helium-bin
+        - syncthing
         - lm_sensors
     remove:
       packages:
