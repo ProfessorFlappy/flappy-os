@@ -41,6 +41,12 @@ modules:
         - nvtop
         - htop
         
+  - type: rpm-ostree
+    repos:
+      - netbird.repo
+    install:
+      - netbird
+        
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
