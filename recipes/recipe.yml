@@ -30,6 +30,7 @@ modules:
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - gnome-software
 
   - type: default-flatpaks
     configurations:
@@ -38,6 +39,7 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - io.missioncenter.MissionCenter
+          - io.github.kolunmi.Bazaar
           - org.pvermeer.WebAppHub
           - com.github.flxzt.rnote
           - com.discordapp.Discord
