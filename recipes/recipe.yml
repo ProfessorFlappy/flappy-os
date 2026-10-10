@@ -46,7 +46,12 @@ modules:
       - netbird.repo
     install:
       - netbird
-        
+
+  - type: systemd
+    system:
+      enabled:
+        - netbird.service
+  
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
