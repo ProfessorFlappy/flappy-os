@@ -45,12 +45,7 @@ modules:
     repos:
       - netbird.repo
     install:
-      - netbird
-
-  - type: systemd
-    system:
-      enabled:
-        - netbird.service
+      - netbird # Run 'sudo netbird service install' then enable the service
   
   - type: default-flatpaks
     configurations:
