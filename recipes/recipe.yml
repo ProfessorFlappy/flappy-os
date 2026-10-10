@@ -31,6 +31,10 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - gnome-software
+        - gnome-system-monitor
+        - gnome-tour
+        - yelp
+        - malcontent-control
         - nvtop
         - htop
 
@@ -40,6 +44,7 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
+          - org.gnome.SimpleScan
           - io.missioncenter.MissionCenter
           - io.github.kolunmi.Bazaar
           - net.codelogistics.webapps
