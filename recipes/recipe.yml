@@ -19,6 +19,10 @@ modules:
 
   - type: dnf
     repos:
+      files:
+        - https://pkgs.netbird.io/yum/
+      keys:
+        - https://pkgs.netbird.io/yum/repodata/repomd.xml.key
       copr:
         - imput/helium
     install:
