@@ -19,8 +19,6 @@ modules:
 
   - type: dnf
     repos:
-      files:
-        - /etc/yum.repos.d/netbird.repo
       copr:
         - imput/helium
     install:
@@ -41,10 +39,6 @@ modules:
         - nvtop
         - htop
         
-  - type: script
-    snippets:
-      - dnf install -y --noscripts netbird
-
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
