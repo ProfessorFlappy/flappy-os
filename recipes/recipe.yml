@@ -40,9 +40,6 @@ modules:
         - malcontent-control
         - nvtop
         - htop
-  - type: shell
-    commands:
-      - dnf install -y --noscripts netbird
 
   - type: default-flatpaks
     configurations:
@@ -67,3 +64,7 @@ modules:
       - Background Logo
   
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  
+shell:
+  commands:
+    - dnf install -y --noscripts netbird
