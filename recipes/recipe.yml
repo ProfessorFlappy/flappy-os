@@ -19,17 +19,17 @@ modules:
 
   - type: dnf
     repos:
-      copr:
-        - imput/helium
+      files:
+        - https://repo.librewolf.net/librewolf.repo
     install:
       packages:
-        - helium
+        - librewolf
         - syncthing # Remember to enable the service
         - lm_sensors
         - fish
     remove:
       packages:
-        # example: removing firefox (in favor of helium)
+        # example: removing firefox (in favor of librewolf)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
