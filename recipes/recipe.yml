@@ -19,11 +19,11 @@ modules:
 
   - type: dnf
     repos:
-      copr:
-        - imput/helium
+      files:
+        - https://repo.librewolf.net/librewolf.repo
     install:
       packages:
-        - helium-bin
+        - librewolf
         - syncthing # Remember to enable the service
         - lm_sensors
         - fish
@@ -62,6 +62,7 @@ modules:
           - org.gnome.Decibels
           - io.missioncenter.MissionCenter
           - io.github.kolunmi.Bazaar
+          - com.github.tchx84.Flatseal
           - net.codelogistics.webapps
           - com.github.flxzt.rnote
           - com.discordapp.Discord
