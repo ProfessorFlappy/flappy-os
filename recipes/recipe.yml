@@ -56,14 +56,14 @@ modules:
           - org.gnome.Extensions
           - org.gnome.SimpleScan
           - org.gnome.Calculator
-          - org.gnome.TextEditor
+          - org.gnome.gitlab.somas.Apostrophe
           - org.gnome.Papers
           - org.gnome.Showtime
           - org.gnome.Decibels
           - io.missioncenter.MissionCenter
           - io.github.kolunmi.Bazaar
           - com.github.tchx84.Flatseal
-          - net.codelogistics.webapps
+          - org.pvermeer.WebAppHub
           - com.github.flxzt.rnote
           - com.discordapp.Discord
           
