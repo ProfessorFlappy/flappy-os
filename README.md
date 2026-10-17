@@ -1,5 +1,7 @@
 # flappy-os &nbsp; [![bluebuild build badge](https://github.com/professorflappy/flappy-os/actions/workflows/build.yml/badge.svg)](https://github.com/professorflappy/flappy-os/actions/workflows/build.yml)
 
+This is my personal OS image for work & gaming.
+
 ## Installation
 
 > [!WARNING]  
