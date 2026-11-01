@@ -1,0 +1,7 @@
+[Unit]
+Description=Ludusavi backup
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/libexec/ludusavi/ludusavi-backup.sh
