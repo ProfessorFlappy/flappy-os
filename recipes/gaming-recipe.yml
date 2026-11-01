@@ -1,0 +1,59 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: flappy-os-gaming
+# description will be included in the image's metadata
+description: This is my personal OS image for gaming.
+
+base-image: ghcr.io/ublue-os/silverblue-nvidia
+image-version: latest
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - from-file: common-modules.yml
+
+  - type: dnf
+    repos:
+      copr:
+        - sunwire/envycontrol
+        - faugus/faugus-launcher
+    install:
+      packages:
+        - python3-envycontrol
+        - faugus-launcher
+        - steam
+        - gamemode
+        - mangohud
+        - intel-undervolt # /etc/intel-undervolt.conf needs editing.
+
+  - type: systemd
+    system:
+      enabled:
+        - intel-undervolt-loop.service
+    user:
+      enabled:
+      - ludusavi-backup.timer
+
+  - type: script
+    scripts:
+      - build-msi-ec.sh
+    snippets:
+      - chmod 755 /usr/libexec/ludusavi/*.sh
+      
+  - type: default-flatpaks
+    configurations:
+      - notify: false # Send notification after install/uninstall is finished (true/false)
+        scope: system
+        # If no repo information is specified, Flathub will be used by default
+        install: # system flatpaks we want all users to have and not remove
+          - org.pipewire.Helvum
+          - org.gnome.Boxes
+          - org.bunkus.mkvtoolnix-gui
+          - it.mijorus.gearlever
+          - com.vysp3r.ProtonPlus
+          - com.github.mtkennerly.ludusavi
+          - org.vinegarhq.Sober
+          - org.prismlauncher.PrismLauncher
+  
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully

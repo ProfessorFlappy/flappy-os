@@ -1,0 +1,69 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: dnf
+    repos:
+      files:
+        - https://repo.librewolf.net/librewolf.repo
+    install:
+      packages:
+        - librewolf
+        - syncthing
+        - lm_sensors
+        - fish
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks
+        - gnome-software
+        - gnome-system-monitor
+        - gnome-tour
+        - yelp
+        - malcontent-control
+        - nvtop
+        - htop
+        
+  - type: rpm-ostree
+    repos:
+      - netbird.repo
+    install:
+      - netbird # Service needs enabling.
+  
+  - type: default-flatpaks
+    configurations:
+      - notify: false # Send notification after install/uninstall is finished (true/false)
+        scope: system
+        # If no repo information is specified, Flathub will be used by default
+        install: # system flatpaks we want all users to have and not remove
+          - org.gnome.Extensions
+          - org.gnome.SimpleScan
+          - org.gnome.Calculator
+          - org.gnome.TextEditor
+          - org.gnome.Papers
+          - io.github.diegopvlk.Cine
+          - org.gnome.Decibels
+          - io.github.shonebinu.Brief
+          - io.missioncenter.MissionCenter
+          - io.github.kolunmi.Bazaar
+          - com.github.tchx84.Flatseal
+          - io.github.flattool.Ignition
+          - org.pvermeer.WebAppHub
+          - org.cockpit_project.CockpitClient
+          - com.discordapp.Discord
+
+  - type: systemd
+    user:
+      enabled:
+        - syncthing.service
+  
+  - type: gnome-extensions
+    install:
+      - AppIndicator and KStatusNotifierItem Support
+    uninstall:
+      - Background Logo
